@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Create</title>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="TOO WebNet">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+
+        <link rel="shortcut icon" href="miniLogoWebnet.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/mobileStyle.css">
+          
+    </head>
+    
+    <body>
+
+        <img src="../img/logoMySQL.svg" alt="logotype MySQL" class="logoBackground">
+
+        <header>
+                <a href="../../index.html">
+                        <img src="../img/logoMySQL.png" alt="logotype MySQL" class="logo">
+                </a>
+            <nav>
+                <ul>
+                    <a href="create.html" class="menuList">
+                        <li class="menuItem">Create</li>
+                    </a>
+                    <a href="read.html" class="menuList">
+                        <li class="menuItem">Read</li>
+                    </a>
+                    <a href="update.html" class="menuList">
+                        <li class="menuItem">Update</li>
+                    </a>
+                    <a href="delete.html" class="menuList">
+                        <li class="menuItem">Delete</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Create commands</h1>
+                <hr>
+            <p>Создать базу данных, с указанием кодировки.</p>
+                <code>
+                    CREATE DATABASE <span class="command">nameDB</span> CHARACTER SET 
+                    <span class="name">utf8</span> COLLATE <span class="name">utf8_general_ci</span>;
+                </code>
+        </main>
+    </body>
+</html>
