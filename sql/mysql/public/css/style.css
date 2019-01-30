@@ -96,9 +96,11 @@ span.name {
 
 span.command {
     color: green;
+    font-family: monospace;
 }
 
 code {
+    font-family: monospace;
     width: 50%;
     text-align: center;
     display: block;

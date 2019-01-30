@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
 
-        <link rel="shortcut icon" href="miniLogoWebnet.png" type="image/png">
+        <link rel="shortcut icon" href="../../miniLogoWebnet.png" type="image/png">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/mobileStyle.css">
           
@@ -58,13 +58,13 @@
                     SHOW TABLES;
                 </code>
             <p>
-                Использовать базу данных.
+                Использование базы данных.
             </p>
                 <code>
                     USE <span class="command">nameDB</span>;
                 </code>
             <p>
-                Просмотреть все содержимое таблици.
+                Просмотр всего содержимого таблици.
             </p>
                 <code>
                     SELECT * FROM <span class="command">nameTable</span>;
@@ -76,11 +76,11 @@
                     DESC <span class="command">nameTable</span>;
                 </code>
             <p>
-                Просмотр определенных колонок с условием.
+                Просмотр определенных колонок с условием и регулярным выражением <span class="name">PERL</span>.
             </p>
                 <code>
                     SELECT <span class="command">name, password</span> FROM <span class="command">nameTable</span> 
-                    WHERE <span class="name">id = 4</span> AND <span class="command">name</span> LIKE <span class="command">'%needName%'</span>; 
+                    WHERE <span class="command">id = 4</span> AND <span class="command">name</span> LIKE <span class="command">'%needName%'</span>; 
                 </code>
         </main>
     </body>

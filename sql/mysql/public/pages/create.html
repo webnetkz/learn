@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
 
-        <link rel="shortcut icon" href="miniLogoWebnet.png" type="image/png">
+        <link rel="shortcut icon" href="../../miniLogoWebnet.png" type="image/png">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/mobileStyle.css">
           
@@ -45,10 +45,17 @@
         <main>
             <h1>Create commands</h1>
                 <hr>
+            <p>
+                Создать нового пользователя.
+            </p>
+                <code>
+                    CREATE USER '<span class="command">nameUser</span>'@'%' IDENTIFIED BY '
+                    <span class="command">PasswordForUser</span>';
+                </code>
             <p>Создать базу данных, с указанием кодировки.</p>
                 <code>
                     CREATE DATABASE <span class="command">nameDB</span> CHARACTER SET 
-                    <span class="name">utf8</span> COLLATE <span class="name">utf8_general_ci</span>;
+                    <span class="command">utf8</span> COLLATE <span class="command">utf8_general_ci</span>;
                 </code>
         </main>
     </body>
