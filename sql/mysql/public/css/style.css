@@ -24,6 +24,7 @@ hr {
     margin: 20px auto;
     height: 5px;
     border-radius: 50%;
+    box-shadow: 0 0 10px black;
 }
 
 main {
