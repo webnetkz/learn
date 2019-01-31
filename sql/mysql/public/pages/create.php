@@ -1,7 +1,15 @@
+<?php
+
+    require_once '../../app/Db.php';
+    $pdo = new Db();
+
+    $result = $pdo->pdo->query('SELECT * FROM create_sql;');
+    $stmt = $result->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Update</title>
+        <title>Create</title>
 
         <meta charset="UTF-8">
         <meta name="author" content="TOO WebNet">
@@ -26,16 +34,16 @@
                 </a>
             <nav>
                 <ul>
-                    <a href="create.html" class="menuList">
+                    <a href="create.php" class="menuList">
                         <li class="menuItem">Create</li>
                     </a>
-                    <a href="read.html" class="menuList">
+                    <a href="read.php" class="menuList">
                         <li class="menuItem">Read</li>
                     </a>
-                    <a href="update.html" class="menuList">
+                    <a href="update.php" class="menuList">
                         <li class="menuItem">Update</li>
                     </a>
-                    <a href="delete.html" class="menuList">
+                    <a href="delete.php" class="menuList">
                         <li class="menuItem">Delete</li>
                     </a>
                 </ul>
@@ -43,6 +51,18 @@
         </header>
 
         <main>
+            <h1>Create commands</h1>
+                <hr>
+            
+            <?php
+
+                foreach($stmt as $key => $value) {
+                    echo '<p>'.$value['description'].'</p>';
+                    echo '<code>'.$value['code'].'</code><hr>';
+                }
+
+            ?>            
+            
         </main>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Create</title>
+        <title>Update</title>
 
         <meta charset="UTF-8">
         <meta name="author" content="TOO WebNet">
@@ -26,16 +26,16 @@
                 </a>
             <nav>
                 <ul>
-                    <a href="create.html" class="menuList">
+                    <a href="create.php" class="menuList">
                         <li class="menuItem">Create</li>
                     </a>
-                    <a href="read.html" class="menuList">
+                    <a href="read.php" class="menuList">
                         <li class="menuItem">Read</li>
                     </a>
-                    <a href="update.html" class="menuList">
+                    <a href="update.php" class="menuList">
                         <li class="menuItem">Update</li>
                     </a>
-                    <a href="delete.html" class="menuList">
+                    <a href="delete.php" class="menuList">
                         <li class="menuItem">Delete</li>
                     </a>
                 </ul>
@@ -43,20 +43,6 @@
         </header>
 
         <main>
-            <h1>Create commands</h1>
-                <hr>
-            <p>
-                Создать нового пользователя.
-            </p>
-                <code>
-                    CREATE USER '<span class="command">nameUser</span>'@'%' IDENTIFIED BY '
-                    <span class="command">PasswordForUser</span>';
-                </code>
-            <p>Создать базу данных, с указанием кодировки.</p>
-                <code>
-                    CREATE DATABASE <span class="command">nameDB</span> CHARACTER SET 
-                    <span class="command">utf8</span> COLLATE <span class="command">utf8_general_ci</span>;
-                </code>
         </main>
     </body>
 </html>

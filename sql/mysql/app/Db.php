@@ -2,10 +2,10 @@
     
 class Db {
     
-    protected $pdo;
+    public $pdo;
     protected $driver = 'mysql';
     protected $host = 'localhost';
-    protected $dbname = 'mysql';
+    protected $dbname = 'learn_sql';
     protected $charset = 'utf8';
     protected $port = 3306;
     protected $login = 'root';
@@ -25,7 +25,9 @@ class Db {
                 ';dbname=' . $this->dbname . 
                  ';charset=' . $this->charset . 
                  ';port=' . $this->port . ';' , 
-                 $this->login, $this->pass, $this->option);
+                 $this->login,
+                 $this->pass
+                );
          } catch(PDOException $e) {
             exit('Нет подключение к Базе данных. Ошибка: ' . $e->getMessage());
         }

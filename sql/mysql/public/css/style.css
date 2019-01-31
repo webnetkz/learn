@@ -88,6 +88,7 @@ p {
     color: rgb(8,55,65);
     margin: 0 200px;
     line-height: 1.5em;
+    text-align: center;
 }
 
 span.name {

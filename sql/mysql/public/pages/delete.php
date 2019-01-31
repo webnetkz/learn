@@ -26,16 +26,16 @@
                 </a>
             <nav>
                 <ul>
-                    <a href="create.html" class="menuList">
+                    <a href="create.php" class="menuList">
                         <li class="menuItem">Create</li>
                     </a>
-                    <a href="read.html" class="menuList">
+                    <a href="read.php" class="menuList">
                         <li class="menuItem">Read</li>
                     </a>
-                    <a href="update.html" class="menuList">
+                    <a href="update.php" class="menuList">
                         <li class="menuItem">Update</li>
                     </a>
-                    <a href="delete.html" class="menuList">
+                    <a href="delete.php" class="menuList">
                         <li class="menuItem">Delete</li>
                     </a>
                 </ul>
