@@ -9,10 +9,11 @@ class AdminPanel {
         $this->db = new DataBase();
     }
 
-    public function append($description, $code) {
+    // Метод добавление записи в таблицу
+    public function append($description, $code, $dbname) {
     
             $codeX = addcslashes($code, '\'');
-            $sql = "INSERT INTO create_sql(description, code) VALUES('$description', '$codeX')";
+            $sql = "INSERT INTO $dbname(description, code) VALUES('$description', '$codeX')";
         
             $result = $this->db->query($sql);
         }

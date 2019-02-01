@@ -62,7 +62,7 @@ textarea {
 textarea:focus {
     margin-bottom: 6px;
     border: 3px solid;
-    transition-duration: 300ms;
+    transition-duration: 500ms;
 }
 
 input.send {
@@ -71,8 +71,8 @@ input.send {
     padding: 20px;
     margin: 20px auto;
     width: 200px;
-    background-color: rgba(42,42,42,1);
-    border-color: rgba(42,42,42,1);
+    background-color: rgba(42,42,42, 1);
+    border-color: rgba(42,42,42, 1);
     color: white;
 }
 

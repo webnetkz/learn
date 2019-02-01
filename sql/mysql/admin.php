@@ -8,7 +8,27 @@ require_once 'app/AdminPanel.php';
     $description = trim($_POST['description']);
     $code = trim($_POST['code']);
 
-    $admin->append($description, $code);
+    // Проверка на выбор базы данных
+    switch($_POST['db']) {
+        case 1:
+            $db = 'create_sql';
+            break;
+        case 2:
+            $db = 'read_sql';
+            break;
+        case 3:
+            $db = 'update_sql';
+            break;
+        case 4:
+            $db = 'delete_sql';
+            break;
+    }
+
+    // Добавление записи в таблицу
+    if(!empty($description) && !empty($code)) {
+        $admin->append($description, $code, $db);
+    }
+
 
 
 ?>
@@ -16,7 +36,7 @@ require_once 'app/AdminPanel.php';
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>MySQL</title>
+        <title>Admin Panel</title>
 
         <meta charset="UTF-8">
         <meta name="author" content="TOO WebNet">
@@ -36,10 +56,10 @@ require_once 'app/AdminPanel.php';
     <nav>
         <menu>
             <ul>
-                <li id="navCreate">Create</li>
-                <li id="navRead">Read</li>
-                <li id="navUpdate">Update</li>
-                <li id="navDelete">Delete</li>
+                <li id="navCreate" onclick="db.value = '1'">Create</li>
+                <li id="navRead" onclick="db.value = '2'">Read</li>
+                <li id="navUpdate" onclick="db.value = '3'">Update</li>
+                <li id="navDelete" onclick="db.value = '4'">Delete</li>
             </ul>
         </menu>
     </nav>
@@ -51,6 +71,7 @@ require_once 'app/AdminPanel.php';
             <textarea name="code" cols="50" rows="5" autocomplete="off">
             </textarea>
                 <input type="submit" name="send" value="SEND" class="send">
+                <input type="text" id="db" name="db" style="display: none;">
         </form>
     </div>
 
