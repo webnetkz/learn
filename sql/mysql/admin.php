@@ -1,5 +1,21 @@
+
+
 <?php
 
+$connect = <<<CONNECT
+    <form action="admin.php" method="GET">
+        <input type="text" name="log" autocomplete="off"><br>
+        <input type="submit" name="go">
+    </form>
+CONNECT;
+
+echo $connect;
+
+
+
+
+
+   
 require_once 'app/AdminPanel.php';
     $admin = new AdminPanel();
 
@@ -31,7 +47,9 @@ require_once 'app/AdminPanel.php';
 
 
 
-?>
+
+
+$content = <<<CONTENT_ADMIN
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -47,7 +65,6 @@ require_once 'app/AdminPanel.php';
 
         <link rel="shortcut icon" href="miniLogoWebnet.png" type="image/png">
         <link rel="stylesheet" href="public/css/adminStyle.css">
-        <link rel="stylesheet" href="public/css/adminMobileStyle.css">
           
     </head>
     
@@ -77,5 +94,9 @@ require_once 'app/AdminPanel.php';
 
     </body>
 </html>
+CONTENT_ADMIN;
 
-
+if($_GET['log'] == 'ghbdtn') {
+    echo $content;
+    unset($connect);
+}

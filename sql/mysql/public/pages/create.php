@@ -3,6 +3,7 @@
     require_once '../../app/DataBase.php';
     $pdo = new DataBase();
 
+    
     $result = $pdo->pdo->query('SELECT * FROM create_sql;');
     $stmt = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>

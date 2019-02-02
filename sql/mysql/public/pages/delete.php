@@ -1,3 +1,12 @@
+<?php
+
+    require_once '../../app/DataBase.php';
+    $pdo = new DataBase();
+
+    
+    $result = $pdo->pdo->query('SELECT * FROM delete_sql;');
+    $stmt = $result->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -43,6 +52,18 @@
         </header>
 
         <main>
+            <h1>Delete commands</h1>
+                <hr>
+
+            <?php
+
+                foreach($stmt as $key => $value) {
+                    echo '<p>'.$value['description'].'</p>';
+                    echo '<code>'.$value['code'].'</code><hr>';
+                }
+
+            ?>
+
         </main>
     </body>
 </html>

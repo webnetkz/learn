@@ -1,3 +1,12 @@
+<?php
+
+    require_once '../../app/DataBase.php';
+    $pdo = new DataBase();
+
+    
+    $result = $pdo->pdo->query('SELECT * FROM read_sql;');
+    $stmt = $result->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -43,45 +52,18 @@
         </header>
 
         <main>
-            <h1>Read Comands</h1>
+            <h1>Read comands</h1>
                 <hr>
-            <p>
-                Просмотр доступных баз данных.
-            </p>
-                <code>
-                    SHOW DATABASES;
-                </code>
-            <p>
-                Просмотр таблиц выбранной базы данных.
-            </p>
-                <code>
-                    SHOW TABLES;
-                </code>
-            <p>
-                Использование базы данных.
-            </p>
-                <code>
-                    USE <span class="command">nameDB</span>;
-                </code>
-            <p>
-                Просмотр всего содержимого таблици.
-            </p>
-                <code>
-                    SELECT * FROM <span class="command">nameTable</span>;
-                </code>
-            <p>
-                Просмотр структуры таблици.
-            </p>
-                <code>
-                    DESC <span class="command">nameTable</span>;
-                </code>
-            <p>
-                Просмотр определенных колонок с условием и регулярным выражением <span class="name">PERL</span>.
-            </p>
-                <code>
-                    SELECT <span class="command">name, password</span> FROM <span class="command">nameTable</span> 
-                    WHERE <span class="command">id = 4</span> AND <span class="command">name</span> LIKE <span class="command">'%needName%'</span>; 
-                </code>
+
+                <?php
+
+                    foreach($stmt as $key => $value) {
+                        echo '<p>'.$value['description'].'</p>';
+                        echo '<code>'.$value['code'].'</code><hr>';
+                    }
+
+                ?>
+
         </main>
     </body>
 </html>
