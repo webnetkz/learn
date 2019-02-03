@@ -58,7 +58,7 @@
             <?php
 
                 foreach($stmt as $key => $value) {
-                    echo '<p>'.$value['description'].'</p>';
+                    echo '<p>'.$value['id'] .'. '. $value['description'].'</p>';
                     echo '<code>'.$value['code'].'</code><hr>';
                 }
 

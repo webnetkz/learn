@@ -45,14 +45,14 @@ li:hover {
 
 div {
     margin-left: 35%;
-    margin-top: 10%;
+    padding: 10%;
 }
 
 textarea {
     border-radius: 30px;
     outline: none;
     padding: 10px;
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: rgba(40,40,40, 0.9);
     color: white;
     box-shadow: 0 0 20px black;
@@ -65,20 +65,13 @@ textarea:focus {
     transition-duration: 500ms;
 }
 
-input.send {
+.send {
     outline: none;
-    display: block;
+    display: inline-block;
     padding: 20px;
     margin: 20px auto;
     width: 200px;
     background-color: rgba(42,42,42, 1);
     border-color: rgba(42,42,42, 1);
     color: white;
-}
-
-input.send:focus {
-    box-shadow: 2px 2px 30px black;
-    color: black;
-    font-size: 1.4em;
-    transition-duration: 400ms;
 }

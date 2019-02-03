@@ -1,19 +1,4 @@
-
-
 <?php
-
-$connect = <<<CONNECT
-    <form action="admin.php" method="GET">
-        <input type="text" name="log" autocomplete="off"><br>
-        <input type="submit" name="go">
-    </form>
-CONNECT;
-
-echo $connect;
-
-
-
-
 
    
 require_once 'app/AdminPanel.php';
@@ -41,15 +26,17 @@ require_once 'app/AdminPanel.php';
     }
 
     // Добавление записи в таблицу
-    if(!empty($description) && !empty($code)) {
+    if(isset($_POST['send'])) {
         $admin->append($description, $code, $db);
     }
 
+    // Изменение записи
+    if(isset($_POST['change'])) {
 
-
-
-
-$content = <<<CONTENT_ADMIN
+        $id = $_POST['query'];
+        $admin->change($id, $description, $code, $db);
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -82,21 +69,18 @@ $content = <<<CONTENT_ADMIN
     </nav>
 
     <div>
-        <form action="admin.php" method="POST">
+        <form action="admin.php" method="POST" id="form">
             <textarea name="description" cols="50" rows="5" autocomplete="off">
             </textarea>
             <textarea name="code" cols="50" rows="5" autocomplete="off">
             </textarea>
-                <input type="submit" name="send" value="SEND" class="send">
+            <br>
+                <input type="submit" name="send" value="APPEND" class="send">
+                <button type="submit" name="change" class="send">CHANGE</button>
                 <input type="text" id="db" name="db" style="display: none;">
+                <input type="text" name="query" autocomplete="off">
         </form>
     </div>
 
     </body>
 </html>
-CONTENT_ADMIN;
-
-if($_GET['log'] == 'ghbdtn') {
-    echo $content;
-    unset($connect);
-}
