@@ -17,7 +17,7 @@ class AdminPanel {
         
             $result = $this->db->query($sql);
             if($result != false) {
-                echo '<p style="color: white;">Добавлено</p>';
+                echo '<p style="color: white; margin: 10px;">Добавлено</p>';
             }
         }
     
@@ -30,7 +30,7 @@ class AdminPanel {
         $result = $this->db->query($sql);
         
         if($result != false) {
-            echo '<p style="color: white;">Изменнено</p>';
+            echo '<p style="color: white; margin: 10px;">Изменнено</p>';
         }
     }
 

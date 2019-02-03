@@ -60,10 +60,12 @@ require_once 'app/AdminPanel.php';
     <nav>
         <menu>
             <ul>
-                <li id="navCreate" onclick="db.value = '1'">Create</li>
-                <li id="navRead" onclick="db.value = '2'">Read</li>
-                <li id="navUpdate" onclick="db.value = '3'">Update</li>
-                <li id="navDelete" onclick="db.value = '4'">Delete</li>
+            <li id="selectItemMenu" class="sBtn"></li>
+                <li class="btnMenu" id="navCreate" onclick="db.value = '1';selectItemMenu.innerHTML = 'Create';">Create</li>
+                <li class="btnMenu" id="navRead" onclick="db.value = '2';selectItemMenu.innerHTML = 'Read';">Read</li>
+                <li class="btnMenu" id="navUpdate" onclick="db.value = '3';selectItemMenu.innerHTML = 'Update';">Update</li>
+                <li class="btnMenu" id="navDelete" onclick="db.value = '4';selectItemMenu.innerHTML = 'Delete';">Delete</li>
+                
             </ul>
         </menu>
     </nav>
@@ -78,7 +80,7 @@ require_once 'app/AdminPanel.php';
                 <input type="submit" name="send" value="APPEND" class="send">
                 <button type="submit" name="change" class="send">CHANGE</button>
                 <input type="text" id="db" name="db" style="display: none;">
-                <input type="text" name="query" autocomplete="off">
+                <input type="text" name="query" autocomplete="off" class="selectId">
         </form>
     </div>
 
