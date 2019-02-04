@@ -36,6 +36,13 @@ require_once 'app/AdminPanel.php';
         $id = $_POST['query'];
         $admin->change($id, $description, $code, $db);
     }
+
+    // Выбор записи
+    if(isset($_POST['select'])) {
+
+        $id = $_POST['query'];
+        $select = $admin->select($id, $db);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -73,14 +80,25 @@ require_once 'app/AdminPanel.php';
     <div>
         <form action="admin.php" method="POST" id="form">
             <textarea name="description" cols="50" rows="5" autocomplete="off">
+                <?php
+                    if(isset($select)) {
+                        echo $select[0]['description'];
+                    }
+                ?>
             </textarea>
             <textarea name="code" cols="50" rows="5" autocomplete="off">
+                <?php
+                    if(isset($select)) {
+                        echo $select[0]['code'];
+                    }
+                ?>
             </textarea>
             <br>
                 <input type="submit" name="send" value="APPEND" class="send">
                 <button type="submit" name="change" class="send">CHANGE</button>
                 <input type="text" id="db" name="db" style="display: none;">
-                <input type="text" name="query" autocomplete="off" class="selectId">
+                <button type="submit" name="select" class="send">SELECT</button>
+                <input type="text" name="query" autocomplete="off" class="selectId" value="<?php if(isset($select)) {echo $select[0]['id'];}?>">
         </form>
     </div>
 

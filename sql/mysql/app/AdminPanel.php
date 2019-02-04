@@ -9,7 +9,7 @@ class AdminPanel {
         $this->db = new DataBase();
     }
 
-    // Метод добавление записи в таблицу
+    // Метод добавление записи
     public function append($description, $code, $dbname) {
     
             $codeX = addcslashes($code, '\'');
@@ -21,7 +21,7 @@ class AdminPanel {
             }
         }
     
-    // Метод на изменение записи в таблицe
+    // Метод на изменение записи
     public function change($id, $description, $code, $dbname) {
 
         $codeX = addcslashes($code, '\'');
@@ -32,6 +32,20 @@ class AdminPanel {
         if($result != false) {
             echo '<p style="color: white; margin: 10px;">Изменнено</p>';
         }
+    }
+
+    // Метод выбора записи
+    public function select($id, $dbname) {
+
+        $sql = "SELECT * FROM $dbname WHERE id = $id";
+        $stmt = $this->db->query($sql);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if($result == false) {
+            echo '<p style="color: white; margin: 10px;">Неверный ID</p>';
+        }
+
+        return $result;
     }
 
 }

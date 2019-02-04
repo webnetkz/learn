@@ -54,8 +54,12 @@ li.sBtn {
 }
 
 div {
-    margin-left: 35%;
+    margin-left: 20%;
     padding: 10%;
+}
+
+form {
+    width: 100%;
 }
 
 textarea {
@@ -67,6 +71,7 @@ textarea {
     color: white;
     box-shadow: 0 0 20px black;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 textarea:focus {
@@ -97,4 +102,5 @@ input.selectId {
     color: white;
     font-weight: 700;
     font-size: 1.2em;
+    text-align: center;
 }
