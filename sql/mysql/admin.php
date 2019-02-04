@@ -67,7 +67,7 @@ require_once 'app/AdminPanel.php';
     <nav>
         <menu>
             <ul>
-            <li id="selectItemMenu" class="sBtn"></li>
+            <li id="selectItemMenu" class="sBtn"><?php if(isset($db)) {echo $db;}?></li>
                 <li class="btnMenu" id="navCreate" onclick="db.value = '1';selectItemMenu.innerHTML = 'Create';">Create</li>
                 <li class="btnMenu" id="navRead" onclick="db.value = '2';selectItemMenu.innerHTML = 'Read';">Read</li>
                 <li class="btnMenu" id="navUpdate" onclick="db.value = '3';selectItemMenu.innerHTML = 'Update';">Update</li>
@@ -96,7 +96,7 @@ require_once 'app/AdminPanel.php';
             <br>
                 <input type="submit" name="send" value="APPEND" class="send">
                 <button type="submit" name="change" class="send">CHANGE</button>
-                <input type="text" id="db" name="db" style="display: none;">
+                <input type="text" id="db" name="db" style="display: none;" value="<?php if(isset($db)) {echo $db;}?>">
                 <button type="submit" name="select" class="send">SELECT</button>
                 <input type="text" name="query" autocomplete="off" class="selectId" value="<?php if(isset($select)) {echo $select[0]['id'];}?>">
         </form>
