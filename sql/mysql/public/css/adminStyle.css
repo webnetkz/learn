@@ -89,6 +89,7 @@ textarea:focus {
     background-color: rgba(42,42,42, 1);
     border-color: rgba(42,42,42, 1);
     color: white;
+    box-shadow: 4px 4px 10px black;
 }
 
 input.selectId {

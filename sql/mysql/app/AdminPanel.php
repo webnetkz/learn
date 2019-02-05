@@ -12,14 +12,15 @@ class AdminPanel {
     // Метод добавление записи
     public function append($description, $code, $dbname) {
     
-            $codeX = addcslashes($code, '\'');
-            $sql = "INSERT INTO $dbname(description, code) VALUES('$description', '$codeX')";
+        $codeX = addcslashes($code, '\'');
+        $sql = "INSERT INTO $dbname(description, code) VALUES('$description', '$codeX')";
         
-            $result = $this->db->query($sql);
-            if($result != false) {
-                echo '<p style="color: white; margin: 10px;">Добавлено</p>';
-            }
+        $result = $this->db->query($sql);
+
+        if($result != false) {
+             echo '<p style="color: white; margin: 10px;">Добавлено</p>';
         }
+    }
     
     // Метод на изменение записи
     public function change($id, $description, $code, $dbname) {
@@ -38,13 +39,13 @@ class AdminPanel {
     public function select($id, $dbname) {
 
         $sql = "SELECT * FROM $dbname WHERE id = $id";
+
         $stmt = $this->db->query($sql);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if($result == false) {
             echo '<p style="color: white; margin: 10px;">Неверный ID</p>';
         }
-
         return $result;
     }
 

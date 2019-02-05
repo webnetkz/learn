@@ -11,16 +11,16 @@ require_once 'app/AdminPanel.php';
 
     // Проверка на выбор базы данных
     switch($_POST['db']) {
-        case 1:
+        case 'create_sql':
             $db = 'create_sql';
             break;
-        case 2:
+        case 'read_sql':
             $db = 'read_sql';
             break;
-        case 3:
+        case 'update_sql':
             $db = 'update_sql';
             break;
-        case 4:
+        case 'delete_sql':
             $db = 'delete_sql';
             break;
     }
@@ -68,10 +68,10 @@ require_once 'app/AdminPanel.php';
         <menu>
             <ul>
             <li id="selectItemMenu" class="sBtn"><?php if(isset($db)) {echo $db;}?></li>
-                <li class="btnMenu" id="navCreate" onclick="db.value = '1';selectItemMenu.innerHTML = 'Create';">Create</li>
-                <li class="btnMenu" id="navRead" onclick="db.value = '2';selectItemMenu.innerHTML = 'Read';">Read</li>
-                <li class="btnMenu" id="navUpdate" onclick="db.value = '3';selectItemMenu.innerHTML = 'Update';">Update</li>
-                <li class="btnMenu" id="navDelete" onclick="db.value = '4';selectItemMenu.innerHTML = 'Delete';">Delete</li>
+                <li class="btnMenu" id="navCreate" onclick="db.value = 'create_sql';selectItemMenu.innerHTML = 'Create';">Create</li>
+                <li class="btnMenu" id="navRead" onclick="db.value = 'read_sql';selectItemMenu.innerHTML = 'Read';">Read</li>
+                <li class="btnMenu" id="navUpdate" onclick="db.value = 'update_sql';selectItemMenu.innerHTML = 'Update';">Update</li>
+                <li class="btnMenu" id="navDelete" onclick="db.value = 'delete_sql';selectItemMenu.innerHTML = 'Delete';">Delete</li>
                 
             </ul>
         </menu>
