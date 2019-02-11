@@ -1,0 +1,3 @@
+WHERE IN (1, 88);
+WHERE BETWEEN 1 AND 88;
+WHERE LIKE '%tamplate%';
