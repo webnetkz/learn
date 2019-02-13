@@ -13,7 +13,7 @@ class DataBase {
     protected $option = [
         
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
-        PDO::ATTR_PERSISTENT => true // Continuous connect 
+        PDO::ATTR_PERSISTENT => true // Continuous connect
 
     ];
 
@@ -21,7 +21,7 @@ class DataBase {
         try {
             $this->pdo = new PDO(
                  $this->driver .
-                 ':host=' . $this->$host .
+                 ':host=' . $this->host .
                 ';dbname=' . $this->dbname . 
                  ';charset=' . $this->charset . 
                  ';port=' . $this->port . ';' , 

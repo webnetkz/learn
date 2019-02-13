@@ -7,10 +7,10 @@ require_once 'app/AdminPanel.php';
 
 
     $description = trim($_POST['description']);
-    $code = trim($_POST['code']);
+    $code = trim(isset($_POST['code']));
 
     // Проверка на выбор базы данных
-    switch($_POST['db']) {
+    switch (isset($_POST['db'])) {
         case 'create_sql':
             $db = 'create_sql';
             break;
