@@ -5,12 +5,14 @@ require_once 'app/AdminPanel.php';
     $admin = new AdminPanel();
 
 
-
-    $description = trim(isset($_POST['description']));
-    $code = trim(isset($_POST['code']));
+    if(!empty($_POST['description'])) {
+		$description = trim($_POST['description']);
+        $code = trim($_POST['code']);
+        $selectDb = $_POST['db'];
+	}
 
     // Проверка на выбор базы данных
-    switch (isset($_POST['db'])) {
+    switch ($selectDb) {
         case 'create_sql':
             $db = 'create_sql';
             break;
