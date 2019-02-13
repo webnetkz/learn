@@ -6,7 +6,7 @@ require_once 'app/AdminPanel.php';
 
 
 
-    $description = trim($_POST['description']);
+    $description = trim(isset($_POST['description']));
     $code = trim(isset($_POST['code']));
 
     // Проверка на выбор базы данных
