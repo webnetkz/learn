@@ -12,6 +12,7 @@ require_once 'app/AdminPanel.php';
 	}
 
     // Проверка на выбор базы данных
+    if(!empty($selectDb))
     switch ($selectDb) {
         case 'create_sql':
             $db = 'create_sql';
